@@ -6,7 +6,7 @@
   "scripts": {
     "clean": "rimraf dist/*",
     "debug": "tsc-watch --onSuccess \"node --inspect 0.0.0.0:8200 dist/server.js\" --onFailure \"echo server error!!\"",
-    "build": "tsc"
+    "build": "npm run clean && tsc"
   },
   "author": "Nick Clark <nick@clarx.dev>",
   "license": "ISC",

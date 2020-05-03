@@ -4,20 +4,16 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "docker-compose up -d",
-    "debug:server": "npm run debug -C server",
-    "debug:client": "npm run start -C client",
-    "postinstall": "npm install -C client && npm install -C server",
+    "deps": "npm i --prefix ./client",
+    "dev:server": "npm run debug -C server",
+    "dev:client": "npm run start -C client",
+    "docker:build": "docker build . -t nclarx/react-ts-docker-starter:latest",
     "build": "npm run build -C client",
-    "server": "pm2-runtime ./server/dist/server.js"
+    "run:prod": "docker run -d --name react-ts-website -p 8080:80 nclarx/react-ts-docker-starter:latest "
   },
   "keywords": [],
-  "author": "",
+  "author": "Nick Clark <nick@clarx.dev>",
   "license": "ISC",
   "dependencies": {
-    "tslib": "^1.11.1"
-  },
-  "devDependencies": {
-    "pm2": "^4.4.0"
   }
 }

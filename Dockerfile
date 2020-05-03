@@ -1,9 +1,8 @@
 # == BUILD PHASE ==
 FROM node:alpine as builder
 WORKDIR '/app'
-COPY client/package.json .
-RUN npm i
 COPY . .
+RUN npm i --prefix ./client
 RUN npm run build
 # == RUN PHASE
 FROM nginx
