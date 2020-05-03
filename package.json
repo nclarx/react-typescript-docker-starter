@@ -9,7 +9,7 @@
     "dev:client": "npm run start -C client",
     "docker:build": "docker build . -t nclarx/react-ts-docker-starter:latest",
     "build": "npm run build -C client",
-    "run:prod": "docker run -d --name react-ts-website -p 8080:80 nclarx/react-ts-docker-starter:latest "
+    "docker:prod": "docker run -d --name react-ts-website -p 8080:80 nclarx/react-ts-docker-starter:latest "
   },
   "keywords": [],
   "author": "Nick Clark <nick@clarx.dev>",

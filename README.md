@@ -12,12 +12,4 @@ This repo has a starter React app using TypeScript with a Dockerfile supporting 
 ### Production
 
 1. Run `npm run build` to build a docker image.
-2. Run the production container with:
-
-```shell script
-docker run -p 8080:80 
-```
-
-## Key Files
-
-`/Dockerfile` -  builds a production image with the client 
+2. Run the production container with: `npm run docker:prod`
