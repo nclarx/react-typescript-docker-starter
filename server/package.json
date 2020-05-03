@@ -1,0 +1,24 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "clean": "rimraf dist/*",
+    "debug": "tsc-watch --onSuccess \"node --inspect 0.0.0.0:8200 dist/server.js\" --onFailure \"echo server error!!\"",
+    "build": "tsc"
+  },
+  "author": "Nick Clark <nick@clarx.dev>",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/express": "^4.17.6",
+    "@types/node": "^13.13.4",
+    "rimraf": "^3.0.2",
+    "tsc-watch": "^4.2.3",
+    "typescript": "^3.8.3"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "helmet": "^3.22.0"
+  }
+}

@@ -1,0 +1,25 @@
+version: '3.6'
+services:
+  server:
+    build:
+      context: .
+      target: development
+    command: ["npm", "run", "debug:server"]
+    container_name: server
+    ports:
+      - '3200:3200'
+      - '3400:3400'
+    volumes:
+      - './server/src:/var/build/server/src:delegated'
+      - './shared/src:/var/build/shared/src:delegated'
+  client:
+    build:
+      context: .
+      target: development
+    command: ["npm", "run", "debug:client"]
+    container_name: client
+    ports:
+      - '4200:4200'
+    volumes:
+      - './client/src:/var/build/client/src:delegated'
+      - './shared/src:/var/build/shared/src:delegated'

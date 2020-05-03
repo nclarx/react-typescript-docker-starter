@@ -1,0 +1,17 @@
+FROM node:12-alpine as base
+
+WORKDIR /app
+
+FROM base as deps
+
+COPY package*.json app/
+COPY client/package*.json app/client/
+COPY server/package*.json app/server/
+
+RUN npm install
+COPY . .
+
+RUN npm run build:prod
+
+CMD ["npm", "run", "server"]
+

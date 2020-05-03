@@ -1,0 +1,23 @@
+{
+  "name": "react-ts-node-docker",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "docker-compose up -d",
+    "debug:server": "npm run debug -C server",
+    "debug:client": "npm run start -C client",
+    "postinstall": "npm install -C client && npm install -C server",
+    "build": "npm run build -C client",
+    "server": "pm2-runtime ./server/dist/server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "tslib": "^1.11.1"
+  },
+  "devDependencies": {
+    "pm2": "^4.4.0"
+  }
+}
